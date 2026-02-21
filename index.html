@@ -2,57 +2,80 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rahul Bhadekar Portfolio</title>
+<title>Rahul Bhadekar | Portfolio</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+<nav>
+<h2>Rahul</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#internship">Internship</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
 <header>
-<h1>Rahul Bhadekar</h1>
-<p>Full Stack Developer | AI Enthusiast</p>
+<h1>Hi, I'm Rahul 👋</h1>
+<p class="typing"></p>
 <a href="#" class="btn">Download Resume</a>
 </header>
 
-<section class="about">
+<section id="about" class="glass">
 <h2>About Me</h2>
-<p>I am a Computer Science Engineering student passionate about building full stack applications and AI solutions. I love creating real-world projects and continuously learning new technologies.</p>
+<p>I am a passionate Computer Science Engineering student with a strong interest in full stack development and AI technologies. I enjoy building real-world applications that solve practical problems and improve user experiences. I have hands-on experience working with modern web technologies including React, Node.js, and databases like MongoDB and MySQL. I continuously focus on improving my problem-solving skills, learning new tools, and developing scalable applications. My goal is to grow as a professional software developer and contribute to impactful tech solutions.</p>
 </section>
 
-<section class="skills">
+<section id="skills" class="glass">
 <h2>Skills</h2>
 <div class="grid">
-<div class="card">Java</div>
-<div class="card">JavaScript</div>
-<div class="card">React.js</div>
-<div class="card">Node.js</div>
-<div class="card">MongoDB</div>
-<div class="card">MySQL</div>
-<div class="card">HTML & CSS</div>
-<div class="card">Git & GitHub</div>
+<span>Java</span>
+<span>JavaScript</span>
+<span>React</span>
+<span>Node.js</span>
+<span>MongoDB</span>
+<span>MySQL</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>Git</span>
+<span>REST APIs</span>
 </div>
 </section>
 
-<section class="projects">
+<section id="projects" class="glass">
 <h2>Projects</h2>
 
 <div class="project">
 <h3>Revitalize — Waste Management System</h3>
-<p>Developed a full stack web application to help users categorize waste and locate recycling centers with responsive UI and structured data management.</p>
+<p>Developed a full stack web application designed to promote efficient waste management by allowing users to categorize waste and locate nearby recycling centers. Implemented responsive UI and structured data handling to improve usability and performance while raising environmental awareness.</p>
 </div>
 
 <div class="project">
 <h3>Jarvis AI — Virtual Assistant</h3>
-<p>Built an AI assistant capable of answering queries and performing tasks through real-time interaction using API integration.</p>
+<p>Built an intelligent virtual assistant capable of responding to user queries and performing basic tasks through a real-time chat interface. Integrated APIs and dynamic response handling to simulate a conversational AI experience.</p>
 </div>
 
 </section>
 
-<section class="contact">
+<section id="internship" class="glass">
+<h2>Internship</h2>
+
+<p><b>Web Development Intern — IBM SkillBuild</b> (June 25, 2024 – August 5, 2024)<br>
+Worked with HTML, CSS, JavaScript, React.js, and Firebase to build responsive web applications. Gained hands-on experience in modern web development practices and UI/UX principles.</p>
+
+<p><b>Web Development Intern — CodeSoft</b> (September 10, 2024 – December 10, 2024)<br>
+Focused on applying frontend development concepts through hands-on projects and gained experience building responsive interfaces using modern web technologies.</p>
+
+</section>
+
+<section id="contact" class="glass">
 <h2>Contact</h2>
 <p><i class="fa fa-envelope"></i> rahulbhadekar2@gmail.com</p>
-<p><i class="fa fa-phone"></i> 9691439806</p>
 <p><i class="fa fa-link"></i> linkedin.com/in/rahul-bhadekar</p>
 <p><i class="fa fa-code"></i> github.com/rahulbhadekar</p>
 </section>
@@ -60,6 +83,36 @@
 <footer>
 <p>© 2026 Rahul Bhadekar</p>
 </footer>
+
+<script>
+const text = ["Full Stack Developer", "AI Enthusiast", "Problem Solver"];
+let i=0, j=0, current="", isDeleting=false;
+
+function type(){
+if(i<text.length){
+if(!isDeleting && j<=text[i].length){
+current=text[i].substring(0,j++);
+}
+if(isDeleting && j>=0){
+current=text[i].substring(0,j--);
+}
+document.querySelector(".typing").textContent=current;
+
+if(j==text[i].length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+if(isDeleting && j===0){
+isDeleting=false;
+i++;
+if(i===text.length) i=0;
+}
+}
+setTimeout(type,100);
+}
+type();
+</script>
 
 </body>
 </html>
