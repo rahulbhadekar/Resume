@@ -1,36 +1,45 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
   background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
 }
 
 /* NAVBAR */
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  background: rgba(15,23,42,0.8);
+  backdrop-filter: blur(12px);
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  align-items: center;
+  padding: 15px 60px;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav h2 {
-  margin: 0;
+  font-weight: 600;
 }
 
 nav ul {
   display: flex;
+  gap: 25px;
   list-style: none;
-  gap: 20px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: 500;
 }
 
 nav a:hover {
@@ -39,29 +48,35 @@ nav a:hover {
 
 /* HERO */
 header {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1e293b, #020617);
   text-align: center;
-  padding: 120px 20px;
+  padding-top: 80px;
 }
 
 header h1 {
-  font-size: 42px;
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
 .typing {
-  font-size: 20px;
+  font-size: 22px;
   color: #38bdf8;
+  margin-bottom: 20px;
 }
 
 /* BUTTON */
 .btn {
-  margin-top: 20px;
-  padding: 12px 25px;
+  padding: 12px 28px;
   background: #38bdf8;
-  border-radius: 6px;
   color: black;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: 0.3s;
 }
 
@@ -72,24 +87,20 @@ header h1 {
 /* SECTIONS */
 section {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 60px auto;
   padding: 30px;
   border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
 }
 
-.glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-}
-
-/* HEADINGS */
 h2 {
+  margin-bottom: 15px;
   border-bottom: 2px solid #38bdf8;
   padding-bottom: 5px;
-  margin-bottom: 15px;
 }
 
-/* SKILLS GRID */
+/* SKILLS */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -97,28 +108,22 @@ h2 {
 }
 
 .grid span {
-  background: rgba(255,255,255,0.1);
   padding: 10px 15px;
+  background: rgba(255,255,255,0.1);
   border-radius: 6px;
-  transition: 0.3s;
 }
 
-.grid span:hover {
-  background: #38bdf8;
-  color: black;
-}
-
-/* PROJECT CARDS */
+/* PROJECT */
 .project {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 15px;
   border-radius: 8px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
   transition: 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 /* CONTACT */
@@ -131,5 +136,4 @@ footer {
   text-align: center;
   padding: 20px;
   background: rgba(0,0,0,0.5);
-  margin-top: 40px;
 }
