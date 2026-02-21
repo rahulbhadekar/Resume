@@ -1,38 +1,35 @@
+/* ===== RESET ===== */
 body {
-  font-family: Arial, sans-serif;
-  margin: 30px;
-  color: #000;
+  font-family: "Calibri", Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  margin: 40px;
+  line-height: 1.5;
 }
 
+/* ===== CONTAINER ===== */
 .container {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
 }
 
+/* ===== NAME ===== */
 h1 {
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
-h2 {
-  margin-top: 16px;
-  border-bottom: 1px solid #aaa;
-  padding-bottom: 2px;
-  font-size: 18px;
-}
-
-p {
-  margin: 5px 0;
+/* ===== CONTACT ===== */
+.contact {
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
-ul {
-  margin-left: 18px;
-  font-size: 14px;
-}
-
+/* ===== DOWNLOAD BUTTON ===== */
 .download {
   text-align: right;
+  margin-bottom: 10px;
 }
 
 button {
@@ -41,9 +38,55 @@ button {
   background: #000;
   color: white;
   cursor: pointer;
+  font-size: 12px;
 }
 
+/* ===== SECTION HEADINGS ===== */
+h2 {
+  font-size: 18px;
+  margin-top: 18px;
+  border-bottom: 1.5px solid #000;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== PARAGRAPH ===== */
+p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* ===== LIST ===== */
+ul {
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+/* ===== TWO COLUMN SKILLS ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 30px;
+}
+
+/* ===== ROW ALIGNMENT (DATES RIGHT) ===== */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===== JOB TITLE ===== */
+.job-title {
+  font-weight: bold;
+}
+
+/* ===== PRINT PERFECT ===== */
 @media print {
+  body {
+    margin: 10px;
+  }
+
   button {
     display: none;
   }
