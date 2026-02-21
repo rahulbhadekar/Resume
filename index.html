@@ -20,11 +20,18 @@
 </ul>
 </nav>
 
-<header> 
-  <img src="profile.jpg" alt="Rahul" class="profile-pic">
+<header class="hero">
+
+<div class="hero-text">
 <h1>Hi, I'm Rahul 👋</h1>
 <p class="typing"></p>
-<a href="#" class="btn">Download Resume</a>
+<a href="resume.pdf" class="btn" download>Download Resume</a>
+</div>
+
+<div class="hero-img">
+<img src="profile.jpg" alt="Rahul">
+</div>
+
 </header>
 
 <section id="about" class="glass">
@@ -86,34 +93,32 @@ Focused on applying frontend development concepts through hands-on projects and 
 </footer>
 
 <script>
-const text = ["Full Stack Developer", "AI Enthusiast", "Problem Solver"];
-let i=0, j=0, current="", isDeleting=false;
+const roles = ["Full Stack Developer", "AI Enthusiast", "Problem Solver"];
+let roleIndex = 0;
+let charIndex = 0;
+let typingElement = document.querySelector(".typing");
 
-function type(){
-if(i<text.length){
-if(!isDeleting && j<=text[i].length){
-current=text[i].substring(0,j++);
+function type() {
+if (charIndex < roles[roleIndex].length) {
+typingElement.textContent += roles[roleIndex].charAt(charIndex);
+charIndex++;
+setTimeout(type, 80);
+} else {
+setTimeout(erase, 1500);
 }
-if(isDeleting && j>=0){
-current=text[i].substring(0,j--);
 }
-document.querySelector(".typing").textContent=current;
 
-if(j==text[i].length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
+function erase() {
+if (charIndex > 0) {
+typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+charIndex--;
+setTimeout(erase, 40);
+} else {
+roleIndex++;
+if (roleIndex >= roles.length) roleIndex = 0;
+setTimeout(type, 200);
 }
-if(isDeleting && j===0){
-isDeleting=false;
-i++;
-if(i===text.length) i=0;
 }
-}
-setTimeout(type,100);
-}
-type();
+
+document.addEventListener("DOMContentLoaded", type);
 </script>
-
-</body>
-</html>
